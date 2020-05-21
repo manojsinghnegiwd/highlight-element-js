@@ -32,7 +32,7 @@ const elementHighlighter = new HighlightElement("#highlight-me")
 elementHighlighter.highlight()
 ```
 
-**`unHighlight`**
+**`unHighlight()`**
 
 unHighlight an element
 
