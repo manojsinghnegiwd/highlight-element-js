@@ -1,6 +1,9 @@
 window["HighlightElement"] = function (selector, config) {
+    var self = this
     this.targetElement = null
     this.highlightedDiv = null
+    this.config = config || {}
+    this.style = this.config.style || {}
 
     if (selector instanceof HTMLElement) {
         this.targetElement = selector
@@ -9,18 +12,29 @@ window["HighlightElement"] = function (selector, config) {
     }
 
     this.highlight = function () {
-        dims = this.targetElement.getBoundingClientRect()
-		this.highlightedDiv = document.createElement("div")
-		this.highlightedDiv.style.borderRadius = `5px`
-		this.highlightedDiv.style.width = `${dims.width}px`
-		this.highlightedDiv.style.height = `${dims.height}px`
-		this.highlightedDiv.style.left = `${dims.left}px`
-		this.highlightedDiv.style.top = `${dims.top}px`
-		this.highlightedDiv.style.position = "absolute"
-		this.highlightedDiv.style.border = "2px solid lightgrey"
-        this.highlightedDiv.style.zIndex = "99999999"
-        this.highlightedDiv.id = "capture-element-highlighted-div"
-        this.highlightedDiv.style.pointerEvents = "none"
-        document.body.appendChild(this.highlightedDiv)
+        var dims = self.targetElement.getBoundingClientRect()
+		self.highlightedDiv = document.createElement("div")
+		self.highlightedDiv.style.borderRadius = `5px`
+		self.highlightedDiv.style.width = `${dims.width}px`
+		self.highlightedDiv.style.height = `${dims.height}px`
+		self.highlightedDiv.style.left = `${dims.left}px`
+		self.highlightedDiv.style.top = `${dims.top}px`
+		self.highlightedDiv.style.position = "absolute"
+		self.highlightedDiv.style.border = "2px solid lightgrey"
+        self.highlightedDiv.style.zIndex = "99999999"
+        self.highlightedDiv.id = "capture-element-highlighted-div"
+        self.highlightedDiv.style.pointerEvents = "none"
+
+        Object.keys(self.style).map(
+            function (key) {
+                self.highlightedDiv.style[key] = self.style[key]
+            }
+        )
+
+        document.body.appendChild(self.highlightedDiv)
+    }
+
+    this.unHighlight = function () {
+        document.body.removeChild(self.highlightedDiv)
     }
 }

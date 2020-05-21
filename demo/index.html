@@ -48,8 +48,18 @@
             <h1>hello</h1>
         </div>
         <script>
-            const elementHighlighter = new HighlightElement("#highlight-me")
+            const elementHighlighter = new HighlightElement("#highlight-me", {
+                style: {
+                    backgroundColor: "#333",
+                    opacity: 0.5
+                }
+            })
+
             elementHighlighter.highlight()
+
+            // setTimeout(function () {
+            //     elementHighlighter.unHighlight()
+            // }, 3000)
         </script>
     </body>
 </html>
