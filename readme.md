@@ -17,7 +17,7 @@ You can pass two arguments to `HighlightElement` constructor
 
 | Name                  | Default         | value                             | Description   |
 | --------------------- | --------------- | --------------------------------- | ------------- |
-| element               | `undefined`     | `HTMLElement || String`           | The element we wants to highlight |
+| element               | `undefined`     | `HTMLElement or String`           | The element we wants to highlight |
 | config                | `undefined`     | `{ style: CSSStyleDeclaration }`  | A config object which can contains `style`  |
 
 Methods
