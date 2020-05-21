@@ -11,8 +11,7 @@ const elementHighlighter = new HighlightElement("#highlight-me")
 elementHighlighter.highlight()
 ```
 
-`new HighlightElement(element: HTMLElement | String, config: Config)`
-=====
+**`new HighlightElement(element: HTMLElement | String, config: Config)`**
 
 You can pass two arguments to `HighlightElement` constructor
 
@@ -24,7 +23,7 @@ You can pass two arguments to `HighlightElement` constructor
 Methods
 =======
 
-# highlight()
+**highlight()**
 
 Highlight an element
 
@@ -33,7 +32,7 @@ const elementHighlighter = new HighlightElement("#highlight-me")
 elementHighlighter.highlight()
 ```
 
-# unHighlight
+**unHighlight**
 
 unHighlight an element
 
@@ -46,7 +45,7 @@ elementHighlighter.unHighlight()
 Examples
 ======
 
-# With config object
+**With config object**
 
 ```javascript
 const elementHighlighter = new HighlightElement("#highlight-me",
