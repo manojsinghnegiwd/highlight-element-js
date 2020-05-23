@@ -42,6 +42,18 @@ elementHighlighter.highlight()
 elementHighlighter.unHighlight()
 ```
 
+**`unHighlightAll()`**
+
+unHighlight All highlighted elements
+
+```javascript
+const elementHighlighter = new HighlightElement("#highlight-me")
+const elementHighlighterSecond = new HighlightElement("#highlight-me-second")
+elementHighlighter.highlight()
+elementHighlighterSecond.highlight()
+elementHighlighter.unHighlightAll()
+```
+
 Examples
 ======
 
