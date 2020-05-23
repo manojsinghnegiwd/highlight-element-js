@@ -41,7 +41,7 @@
         <div id="dont-highlight-me">
             <h1>hello</h1>
         </div>
-        <div id="dont-highlight-me">
+        <div id="highlight-me-second">
             <h1>hello</h1>
         </div>
         <div id="dont-highlight-me">
@@ -55,7 +55,14 @@
                 }
             })
 
+            const elementHighlighterSecond = new HighlightElement("#highlight-me-second")
+
             elementHighlighter.highlight()
+            elementHighlighterSecond.highlight()
+
+            setTimeout(function () {
+                elementHighlighter.unHighlightAll()
+            }, 3000)
         </script>
     </body>
 </html>

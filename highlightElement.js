@@ -1,4 +1,11 @@
+window["HighlightElementsList"] = []
+
 window["HighlightElement"] = function (selector, config) {
+
+    // store this instance in the global array
+
+    window["HighlightElementsList"].push(this)
+
     var self = this
     this.targetElement = null
     this.highlightedDiv = null
@@ -36,5 +43,11 @@ window["HighlightElement"] = function (selector, config) {
 
     this.unHighlight = function () {
         document.body.removeChild(self.highlightedDiv)
+    }
+
+    this.unHighlightAll = function () {
+        window["HighlightElementsList"].forEach(function (instance) {
+            instance.unHighlight()
+        })
     }
 }
