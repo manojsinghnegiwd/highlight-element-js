@@ -18,7 +18,10 @@ window["HighlightElement"] = function (selector, config) {
         this.targetElement = document.querySelector(selector)
     }
 
-    this.highlight = function () {
+    this.highlight = function (highlightConfig) {
+
+        highlightConfig = highlightConfig || {}
+        
         var dims = self.targetElement.getBoundingClientRect()
 		self.highlightedDiv = document.createElement("div")
 		self.highlightedDiv.style.borderRadius = `5px`
@@ -39,6 +42,12 @@ window["HighlightElement"] = function (selector, config) {
         )
 
         document.body.appendChild(self.highlightedDiv)
+
+        if (highlightConfig.scrollIntoView) {
+            self.targetElement.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
     }
 
     this.unHighlight = function () {

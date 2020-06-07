@@ -58,11 +58,9 @@
             const elementHighlighterSecond = new HighlightElement("#highlight-me-second")
 
             elementHighlighter.highlight()
-            elementHighlighterSecond.highlight()
-
-            setTimeout(function () {
-                elementHighlighter.unHighlightAll()
-            }, 3000)
+            elementHighlighterSecond.highlight({
+                scrollIntoView: true
+            })
         </script>
     </body>
 </html>

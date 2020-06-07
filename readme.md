@@ -23,9 +23,13 @@ You can pass two arguments to `HighlightElement` constructor
 Methods
 =======
 
-**`highlight()`**
+**`highlight(config)`**
 
 Highlight an element
+
+| Name                  | Default         | value                         | Description   |
+| --------------------- | --------------- | ----------------------------- | ------------- |
+| config                | `undefined`     | `{ scrollIntoView: Object }`  | A config object which can contains `scrollIntoView`. `scrollIntoView` scroll the element into view when higlighted  |
 
 ```javascript
 const elementHighlighter = new HighlightElement("#highlight-me")
